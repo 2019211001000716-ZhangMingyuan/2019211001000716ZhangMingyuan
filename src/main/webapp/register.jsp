@@ -11,15 +11,12 @@
     <title>Title</title>
 </head>
 <body>
-<form method="post" action="register">
-Name<input type="text" name="Name" required><br/>
-Password<input type="password" name="Password" required minlength="8"><br/>
-Email<input type="email" name="Email"><br/>
-BirthDay<input type="text" name="BirthDay" ><br/>
-Gender
-<input  type="radio" name="Gender" value="male">Male
-<input  type="radio" name="Gender" value="female">Female<br/>
+Name<input type="text" name="name" required><br/>
+Password<input type="password" name="password" required minlength="8"><br/>
+Email<input type="email" name="email"><br/>
+BirthDay<input type="date" name="birthday" dataformatas="yyyy-dd-mm"><br/>
+<input name="sex" type="radio" value="male">Male
+<input name="sex" type="radio" value="female">Female<br/>
 <input type="submit" value="register">
-</form>
 </body>
 </html>
