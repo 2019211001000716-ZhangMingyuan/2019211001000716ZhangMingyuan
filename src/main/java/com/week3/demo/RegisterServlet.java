@@ -67,11 +67,11 @@ public class RegisterServlet extends HttpServlet {
             rs = con.createStatement().executeQuery(sql2);
             while(rs.next()){
                 int id=rs.getInt("id");
-                String username=rs.getString("username");
+                String username=rs.getString("Username");
                 String password1=rs.getString("password");
-                String email=rs.getString("email");
-                String gender=rs.getString("gender");
-                Date birthdate=rs.getDate("birthdate");
+                String email=rs.getString("Email");
+                String gender=rs.getString("Gender");
+                Date birthdate=rs.getDate("Date");
                 SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
                 out.println("<tr><td>"+id+"</td><td>"+username+"</td><td>"+password1+"</td><td>"+email+"</td><td>"+gender+"</td><td>"+sdf.format(birthdate)+"</td></tr>");
             }
