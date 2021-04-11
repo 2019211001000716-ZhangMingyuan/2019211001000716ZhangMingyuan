@@ -1,4 +1,4 @@
-package com.ZhangMingyuan.week4;
+package com.ZhangMingyuan.week4.demo;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebInitParam;
