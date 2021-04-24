@@ -15,6 +15,7 @@
         <servlet-name>SearchServlet</servlet-name>
         <servlet-class>com.ZhangMingyuan.week6.demo.SearchServlet</servlet-class>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/search</url-pattern>
@@ -73,6 +74,10 @@
         <param-name>password</param-name>
         <param-value>z995994706</param-value>
     </context-param>
+
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>    <!--when you run app,first request send to home-->
+    </welcome-file-list>
 
 
 

@@ -39,21 +39,20 @@ public class UserDao implements IUserDao {
 
     @Override
     public int updateUser(Connection con, User user) throws SQLException {
-        String sql="UPDATE usertable SET username=?,password=?,email=?,gender=?,birthday=? WHERE id=?;";
-        PreparedStatement pstmt =con.prepareStatement(sql);
+        String sql="update Usertable set Username=?,password=?,Email=?,Gender=?,Date=? where id=?";
+        PreparedStatement pstmt= con.prepareStatement(sql);
         pstmt.setString(1,user.getUsername());
         pstmt.setString(2,user.getPassword());
         pstmt.setString(3,user.getEmail());
         pstmt.setString(4,user.getGender());
-        pstmt.setDate(5, (java.sql.Date) user.getBirthdate());
+        pstmt.setDate(5,new java.sql.Date(user.getBirthdate().getTime()));
         pstmt.setInt(6,user.getId());
-        int rs = pstmt.executeUpdate();
-        return rs;
+        return pstmt.executeUpdate();
     }
 
     @Override
     public User findById(Connection con, Integer id) throws SQLException {
-        String sql="select id,username,password,email,gender,birthdate from usertable where username=? and password=?";
+        String sql="select id,Username,password,Email,Gender,Date from usertable where Username=? and password=?";
         PreparedStatement st=con.prepareStatement(sql);
         ResultSet rs= st.executeQuery();
         User user=null;
@@ -74,7 +73,7 @@ public class UserDao implements IUserDao {
 
     @Override
     public User findByUsernamePassword(Connection con, String username, String password) throws SQLException {
-        String sql="select * from usertable where username=? and password=?";
+        String sql="select * from usertable where Username=? and password=?";
         PreparedStatement ps=con.prepareStatement(sql);
         ps.setString(1,username);
         ps.setString(2,password);
@@ -96,7 +95,7 @@ public class UserDao implements IUserDao {
     public List<User> findByUsername(Connection con, String username) throws SQLException {
         List<User> userList=new ArrayList<User>();
 
-        String sql="select * from usertable where username=?";
+        String sql="select * from usertable where Username=?";
         PreparedStatement ps=con.prepareStatement(sql);
         ps.setString(1,username);
         ResultSet rs=ps.executeQuery();
@@ -138,7 +137,7 @@ public class UserDao implements IUserDao {
     public List<User> findByEmail(Connection con, String email) throws SQLException {
         List<User> userList=new ArrayList<User>();
 
-        String sql="select * from usertable where email=?";
+        String sql="select * from usertable where Email=?";
         PreparedStatement ps=con.prepareStatement(sql);
         ps.setString(1,email);
         ResultSet rs=ps.executeQuery();
