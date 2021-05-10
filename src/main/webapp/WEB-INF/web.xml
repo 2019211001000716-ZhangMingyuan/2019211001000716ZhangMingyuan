@@ -36,7 +36,7 @@
 
     <servlet-mapping>
         <servlet-name>ZMY</servlet-name>
-        <url-pattern>/hello</url-pattern>
+        <url-pattern>/hello1</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
@@ -78,6 +78,30 @@
     <welcome-file-list>
         <welcome-file>home</welcome-file>    <!--when you run app,first request send to home-->
     </welcome-file-list>
+    <filter>
+        <filter-name>HelloFilter</filter-name>
+        <filter-class>com.ZhangMingyuan.filter.HelloFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HelloFilter</filter-name>
+        <url-pattern>/hello</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>LoggerFilter</filter-name>
+        <filter-class>com.ZhangMingyuan.filter.LoggerFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoggerFilter</filter-name>
+        <url-pattern>/hello</url-pattern>
+    </filter-mapping>
+    <!--<filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>com.ZhangMingyuan.filter.AuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/hello</url-pattern>
+    </filter-mapping>-->
 
 
 
