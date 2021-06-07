@@ -52,8 +52,9 @@ public class UserDao implements IUserDao {
 
     @Override
     public User findById(Connection con, Integer id) throws SQLException {
-        String sql="select id,Username,password,Email,Gender,Date from usertable where Username=? and password=?";
+        String sql="select id,Username,password,Email,Gender,Date from usertable where id=?";
         PreparedStatement st=con.prepareStatement(sql);
+        st.setInt(1,id);
         ResultSet rs= st.executeQuery();
         User user=null;
         if(rs.next()){
