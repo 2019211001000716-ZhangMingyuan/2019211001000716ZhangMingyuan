@@ -1,4 +1,4 @@
-<%@include file="../header.jsp" %>
+<%@include file="../header.jsp"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
      <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
        <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
